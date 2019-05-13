@@ -25,7 +25,7 @@ func HealthCheck(w http.ResponseWriter, r *http.Request) {
 		Msg    string
 	}
 	w.Header().Set("Content-Type", "application/json")
-	res := Result{0, "Still alie!"}
+	res := Result{0, "Still alive!"}
 	fmt.Println(res)
 	json.NewEncoder(w).Encode(res)
 }
