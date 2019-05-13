@@ -10,7 +10,7 @@
   "env": {
     "PORT": {
       "required": true,
-      "value" : 3000
+      "value" : "3000"
     }
   },
   "formation": {
