@@ -14,7 +14,7 @@ func main() {
 	var router = mux.NewRouter()
 	router.HandleFunc("/healthcheck", HealthCheck).Methods("GET")
 
-	fmt.Println("Running server!")
+	fmt.Println("Running server now!")
 	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), router))
 }
 
