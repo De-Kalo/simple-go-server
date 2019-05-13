@@ -1,0 +1,26 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/go"
+    }
+  ],
+  "env": {
+    "PORT": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "simple-go-server",
+  "scripts": {
+    "postdeploy": "postbuild",
+    "pr-predestroy": "teardown"
+  },
+  "stack": "heroku-18"
+}
