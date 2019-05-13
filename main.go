@@ -12,17 +12,18 @@ import (
 
 func main() {
 	var router = mux.NewRouter()
-	router.HandleFunc("/healthcheck", healthCheck).Methods("GET")
+	router.HandleFunc("/healthcheck", HealthCheck).Methods("GET")
 
 	fmt.Println("Running server!")
 	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), router))
 }
 
-func healthCheck(w http.ResponseWriter, r *http.Request) {
+func HealthCheck(w http.ResponseWriter, r *http.Request) {
 	type Result struct {
 		Status int
 		Msg    string
 	}
+	w.Header().Set("Content-Type", "application/json")
 	res := Result{0, "Still alive!"}
 	fmt.Println(res)
 	json.NewEncoder(w).Encode(res)
